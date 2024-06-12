@@ -60,7 +60,7 @@ export const usePost = (postData: PostProps) => {
             .then(() => {
                 setloading(false)
             })
-            .catch((e) => {
+            .catch(() => {
                 setloading(false)
                 setError("error while posting blog");
             })

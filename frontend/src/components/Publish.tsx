@@ -17,7 +17,6 @@ const Publish = () => {
     content: "",
     category: ""
   })
-  const [loading, setloading] = useState(false)
   const [error, setError] = useState("")
   const navigate = useNavigate();
 
@@ -34,7 +33,6 @@ const Publish = () => {
   async function postBlog() {
     if (!postData.title || !postData.content || !postData.category) return toast.error("Please fill all the fields")
     const loadingToastId = toast.loading("Posting Blog");
-    setloading(true);
     try {
       const res = await axios.post(`${BACKEND_URL}/api/v1/blog`, {
         title: postData.title,
@@ -46,11 +44,9 @@ const Publish = () => {
         }
       });
       toast.dismiss(loadingToastId);
-      setloading(false);
       setError("");
       navigate(`/blog/${res.data.blog}`)
     } catch (err) {
-      setloading(false);
       setError("error while posting blog");
     }
   }
