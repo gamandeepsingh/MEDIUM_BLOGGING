@@ -1,7 +1,6 @@
 import toast from 'react-hot-toast';
 import AppBar from '../components/AppBar'
 import BlogCard from '../components/BlogCard'
-import Loader from '../components/Loader';
 import {useBlogs} from '../hooks'
 import { BACKEND_URL } from '../config';
 import BlogSkeleton from '../components/BlogSkeleton';

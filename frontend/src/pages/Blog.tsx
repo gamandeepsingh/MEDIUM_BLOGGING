@@ -2,7 +2,6 @@ import { BACKEND_URL } from "../config";
 import moment from "moment-timezone";
 import AppBar from "../components/AppBar";
 import {useBlogs} from "../hooks";
-import Loader from "../components/Loader";
 import toast from "react-hot-toast";
 import BlogSkeleton from "../components/BlogSkeleton";
 
